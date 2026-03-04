@@ -106,5 +106,4 @@ Through this project, I developed skills in:
 ## 📬 Contact
 linkedin: https://www.linkedin.com/in/wayna-ali-055204209/
 github: https://github.com/waynaali
-If you want, I can also give you a **shorter version** (more minimal and clean) in case your instructor prefers a compact README.
-```
+
