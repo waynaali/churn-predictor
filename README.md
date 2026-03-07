@@ -59,25 +59,36 @@ Please download it from Kaggle and place it in the project folder before running
 
 **Week 2: ML Models**
 
-* Trained and compared multiple machine learning models:
+* Trained and compared **three machine learning models**:
 
-  * **Logistic Regression**
-  * **Decision Tree Classifier**
-  * **Random Forest Classifier**
-  * **XGBoost Classifier**
-* Evaluated models using:
+  1. Logistic Regression
+  2. Decision Tree Classifier
+  3. Random Forest Classifier
+* Evaluated models using **Accuracy, Classification Report, and Confusion Matrix**
+* Conducted **feature engineering** with new features:
 
-  * Accuracy, Precision, Recall, F1-score
-  * Confusion Matrix
-  * ROC-AUC Curve
-* **Random Forest and XGBoost** showed the best performance in predicting customer churn.
+  * `TotalRevenue` = tenure × monthly charges
+  * `TotalServices` = count of active services
+  * `TenureGroup` = binned tenure
+  * `HighCharges` = flag for high monthly charges
+* Retrained the best model (Random Forest) with new features
+* Observed improvement in prediction accuracy after feature engineering
 
-| Model               | Accuracy | Precision | Recall | F1-score |
-| ------------------- | -------- | --------- | ------ | -------- |
-| Logistic Regression | 0.79     | 0.70      | 0.63   | 0.66     |
-| Decision Tree       | 0.78     | 0.68      | 0.64   | 0.66     |
-| Random Forest       | 0.83     | 0.75      | 0.70   | 0.72     |
-| XGBoost             | 0.84     | 0.76      | 0.71   | 0.73     |
+**Typical Model Accuracy (Expected Ranges):**
+
+| Model               | Accuracy Range |
+| ------------------- | -------------- |
+| Logistic Regression | 75–80%         |
+| Decision Tree       | 72–78%         |
+| Random Forest       | 78–83%         |
+
+**Top Important Features (Typical):**
+
+1. Contract type (month-to-month indicator)
+2. Tenure (how long customer has been with company)
+3. Monthly Charges
+4. Internet Service type
+5. Payment Method
 
 ---
 
@@ -86,7 +97,7 @@ Please download it from Kaggle and place it in the project folder before running
 Install required libraries:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ```
 
 Run the notebooks:
@@ -100,8 +111,9 @@ jupyter notebook week2_ml_models.ipynb
 
 ## 🚀 Next Steps
 
-* Week 3: Model evaluation and optimization
-* Week 4: Deployment and dashboard development
+* Week 3: Hyperparameter tuning and model optimization
+* Explore additional feature combinations
+* Handle class imbalance if needed
 
 ---
 
@@ -112,8 +124,9 @@ Through this project, I developed skills in:
 * Data cleaning and preprocessing
 * Exploratory Data Analysis (EDA)
 * Data visualization using Matplotlib and Seaborn
-* Building and comparing machine learning models (Logistic Regression, Decision Tree, Random Forest, XGBoost)
+* Building and comparing machine learning models (Logistic Regression, Decision Tree, Random Forest)
 * Evaluating model performance metrics
+* Feature engineering for improved predictions
 * Identifying business insights from data
 * Git and GitHub version control workflow
 
@@ -123,6 +136,3 @@ Through this project, I developed skills in:
 
 * LinkedIn: [Wayna Ali](https://www.linkedin.com/in/wayna-ali-055204209/)
 * GitHub: [waynaali](https://github.com/waynaali)
-
-
-Do you want me to do that?
