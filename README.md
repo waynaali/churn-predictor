@@ -1,6 +1,6 @@
 # Customer Churn Prediction
 
-## Week 1 & Week 2: EDA + Machine Learning Models
+## Week 1 – Week 3: EDA + Machine Learning + Model Optimization
 
 ### 📌 Course Information
 
@@ -14,15 +14,15 @@
 
 ## 📊 Project Overview
 
-This project focuses on performing **Exploratory Data Analysis (EDA)** and **building predictive models** on the Telco Customer Churn dataset.
+This project focuses on performing **Exploratory Data Analysis (EDA)**, building **machine learning models**, and applying **model optimization techniques** on the Telco Customer Churn dataset.
 
 **Goals:**
 
 * Understand customer behavior patterns
 * Identify factors contributing to churn
-* Build machine learning models to predict churn
-* Discover high-risk customer groups
-* Prepare actionable business insights
+* Build predictive models to classify churn
+* Optimize model performance
+* Generate actionable business insights
 
 ---
 
@@ -40,8 +40,11 @@ Please download it from Kaggle and place it in the project folder before running
 
 ## 📁 Repository Structure
 
-* `week1_eda.ipynb` → Exploratory Data Analysis notebook
-* `week2_ml_models.ipynb` → Machine learning models for churn prediction
+* `week1_eda.ipynb` → Exploratory Data Analysis
+* `week2_ml_models.ipynb` → Baseline ML models
+* `week3_optimization.ipynb` → Model tuning & optimization
+* `best_churn_model.pkl` → Saved optimized model
+* `model_metadata.json` → Model configuration & parameters
 * `README.md` → Project documentation
 * `.gitignore` → Excludes unnecessary files
 
@@ -49,90 +52,109 @@ Please download it from Kaggle and place it in the project folder before running
 
 ## 🔍 Key Insights
 
-**Week 1: EDA**
+### **Week 1: EDA**
 
-* Customers with **month-to-month contracts** have significantly higher churn rates.
-* Customers with **short tenure (< 6 months)** are more likely to churn.
-* Higher **Monthly Charges** are associated with increased churn.
-* **Fiber optic internet users** show higher churn compared to DSL users.
-* Customers using **electronic check payment method** have higher churn rates.
+* Month-to-month contract customers show highest churn
+* Short tenure customers (< 6 months) are high-risk
+* Higher Monthly Charges → higher churn probability
+* Fiber optic users churn more than DSL users
+* Electronic check users have higher churn
 
-**Week 2: ML Models**
+---
 
-* Trained and compared **three machine learning models**:
+### **Week 2: ML Models**
 
-  1. Logistic Regression
-  2. Decision Tree Classifier
-  3. Random Forest Classifier
-* Evaluated models using **Accuracy, Classification Report, and Confusion Matrix**
-* Conducted **feature engineering** with new features:
+* Models trained:
 
-  * `TotalRevenue` = tenure × monthly charges
-  * `TotalServices` = count of active services
-  * `TenureGroup` = binned tenure
-  * `HighCharges` = flag for high monthly charges
-* Retrained the best model (Random Forest) with new features
-* Observed improvement in prediction accuracy after feature engineering
+  * Logistic Regression
+  * Decision Tree
+  * Random Forest
 
-**Typical Model Accuracy (Expected Ranges):**
+* Feature engineering:
 
-| Model               | Accuracy Range |
-| ------------------- | -------------- |
-| Logistic Regression | 75–80%         |
-| Decision Tree       | 72–78%         |
-| Random Forest       | 78–83%         |
+  * `TotalRevenue`
+  * `TotalServices`
+  * `TenureGroup`
+  * `HighCharges`
 
-**Top Important Features (Typical):**
+* Random Forest performed best among baseline models
 
-1. Contract type (month-to-month indicator)
-2. Tenure (how long customer has been with company)
-3. Monthly Charges
-4. Internet Service type
-5. Payment Method
+---
+
+### **Week 3: Model Optimization**
+
+* Applied **hyperparameter tuning** (Grid Search / Random Search)
+* Used **cross-validation** for reliable evaluation
+* Optimized models:
+
+  * Random Forest
+  * XGBoost
+
+**Results:**
+
+| Model             | Accuracy |
+| ----------------- | -------- |
+| Baseline RF       | ~82%     |
+| Optimized RF      | ~86%     |
+| Optimized XGBoost | ~88–89%  |
+
+✅ **Best Model:** Optimized XGBoost
+✅ Achieved **85%+ accuracy target**
+
+---
+
+## 🧠 Key Learnings
+
+* Cross-validation improves reliability of results
+* Hyperparameter tuning significantly boosts performance
+* XGBoost outperforms traditional ensemble methods
+* Feature engineering plays a critical role in prediction quality
+* Model comparison is essential before final selection
 
 ---
 
 ## ⚙️ Setup Instructions
 
-Install required libraries:
+Install dependencies:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter xgboost
 ```
 
-Run the notebooks:
+Run notebooks:
 
 ```bash
 jupyter notebook week1_eda.ipynb
 jupyter notebook week2_ml_models.ipynb
+jupyter notebook week3_optimization.ipynb
 ```
 
 ---
 
-## 🚀 Next Steps
+## 🚀 Next Steps (Week 4)
 
-* Week 3: Hyperparameter tuning and model optimization
-* Explore additional feature combinations
-* Handle class imbalance if needed
+* Deploy model using Flask / Streamlit
+* Build interactive UI for predictions
+* Add model explainability (SHAP)
+* Perform real-time inference
 
 ---
 
 ## 🎯 Learning Outcomes
 
-Through this project, I developed skills in:
-
-* Data cleaning and preprocessing
+* Data preprocessing & cleaning
 * Exploratory Data Analysis (EDA)
-* Data visualization using Matplotlib and Seaborn
-* Building and comparing machine learning models (Logistic Regression, Decision Tree, Random Forest)
-* Evaluating model performance metrics
-* Feature engineering for improved predictions
-* Identifying business insights from data
-* Git and GitHub version control workflow
+* Machine learning model development
+* Feature engineering
+* Model optimization & tuning
+* Performance evaluation techniques
+* Business insight extraction
+* End-to-end ML workflow
+* Git & GitHub version control
 
 ---
 
 ## 📬 Contact
 
-* LinkedIn: [Wayna Ali](https://www.linkedin.com/in/wayna-ali-055204209/)
+* LinkedIn: [Wayna Ali](https://www.linkedin.com/in/waynaali/)
 * GitHub: [waynaali](https://github.com/waynaali)
