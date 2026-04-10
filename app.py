@@ -75,9 +75,15 @@ if st.button('Predict Churn'):
     churn_prob = probability[1] * 100
 
     # output
-    if prediction == 1:
-        st.error('HIGH RISK: Customer likely to churn')
-        st.metric('Churn Probability', f'{churn_prob:.1f}%')
-    else:
-        st.success('LOW RISK: Customer likely to stay')
-        st.metric('Retention Probability', f'{100 - churn_prob:.1f}%')
+    st.subheader("📊 Risk Analysis Dashboard")
+
+# Metrics
+st.metric("Churn Probability", f"{churn_prob:.1f}%")
+
+if prediction == 1:
+    st.error("⚠️ High Risk Customer")
+else:
+    st.success("✅ Low Risk Customer")
+
+# Gauge chart
+st.plotly_chart(create_gauge(churn_prob / 100))
